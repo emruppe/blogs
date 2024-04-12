@@ -1,0 +1,80 @@
+Incident Analysis 101: Facilitating a Learning Review Part 2
+Running the Review Without Interviewing
+ 
+There are many ways to approach a learning review. Some involve extensive preparations, while others just get enough of a sense of the incident to make the best use of the time together. Scheduling, conducting, and processing the findings from interviews takes time, and time can be a scarce resource—especially right after an incident. When you need to save time, an alternative can be to analyze the data already available to you, identify questions that you have for responders, and ask those during the learning review instead of in one-on-one interviews. However, conducting interviews within a post-incident meeting changes the scope of a learning review by drawing on methods of knowledge elicitation1. 
+
+In this post we’ll cover the importance of psychological safety in this situation, who to invite to the learning review, what the agenda looks like and how to approach knowledge elicitation. Before digging in here, please read the previous blog in this series, Facilitating a Learning Review. Consider it a prerequisite course. This post will build on the foundations laid there and highlight where the approach changes when interviewing is combined with the post-incident meeting.
+
+Skipping tip: The incidents we don’t recommend skipping interviews for are the ones you likely have the least time to analyze: highly contentious incidents, incidents with significant customer impact, and your “Sev0/All Hands on Deck/🚨🔥💥 ❗” incidents. With these incidents it’s increasingly vital to understand key decisions and context, 1 on 1 interviews make it easier to build trust in order to ask the harder questions and stickier topics.  
+Setting Up for Psychological Safety
+The term “psychological safety” was created by Harvard Business School professor Amy Edmondson, who says “The term is meant to suggest neither a careless sense of permissiveness, nor an unrelentingly positive affect but, rather, a sense of confidence that the team will not embarrass, reject, or punish someone for speaking up. This confidence stems from mutual respect and trust among team members.”2 In a 1 on 1 interview, the mutual respect and trust only needs to be established between two people. This is not the case in a learning review with large groups. To put it simply, you have significantly less control over the dynamics in the room. 
+
+Establishing an interpersonal agreement for how these topics will be discussed between attendees, at the very beginning  of the review meeting, is of the utmost importance. To learn from this incident, there will be potentially uncomfortable topics and difficult questions that you will have to go through—not around—to gain knowledge and understanding. In order for this to be a safe place to do so, everyone in attendance needs to agree to approach the entire conversation from a place of curiosity, not judgment.
+
+Your role as the facilitator is to create the safest learning environment possible, so that your responders feel comfortable enough to share their experiences and perspective in front of others. If there are specific people you know you have questions for, reach out to them ahead of time to prepare them for what you may be asking. Share the calibration document in advance (we recommend at least 24 hours prior to the meeting) so they can get a feeling of how you’ve interpreted the events and the questions you may have. Allow them to clarify, elaborate or correct the document as needed, it may help change the direction for some of your questions. Giving advance notice that you will be asking questions about their experience, and helping them understand what to expect, will ease apprehensiveness  and defensiveness. This prior interaction can help to establish some psychological safety between you as the facilitator and your in-meeting interviewees.
+
+Who to Invite
+Conducting interviews within the learning review may influence your invite list, as the people present and their relationships with one another may impact the kinds of responses they provide. Consider your own organization carefully: 
+Are leaders reflective of how they ask questions and the effect  of their presence in a learning review?  
+Are engineers able to speak openly about problems around certain people or teams? 
+Do you, as a facilitator, feel comfortable managing a live discussion that may involve some tough discussions?  
+If you answered no, then you may want to limit your attendees to ensure participants feel comfortable sharing their mistakes or concerns.
+
+Facilitator tip: Make your life easier and delegate note-taking to someone, which may mean inviting another person outside of the folks involved in the incident. Facilitating the learning review while asking your interview questions can make it hard to take detailed notes. Recording the session will also give you a chance to go back and confirm you captured the intent and statements in your notes correctly. 
+Agenda
+Having structure to how the meeting will progress helps you as a facilitator feel prepared and gives your attendees a sense of what to expect. We recommend the following structure:
+
+Opening Remarks
+Overview of the Incident
+Interactive Narrative Discovery
+Identify Themes & Discussion
+Call for Questions
+Next Steps
+
+Opening Remarks & Overview of the Incident
+You'll follow the same patterns in these sections as you do when conducting a learning review with interviews as established in the previous Facilitating a Learning Review post. 
+Interactive Narrative Discovery
+The Interactive Narrative Discovery is essentially interviewing ‘live’ in the meeting, and this is where the bulk of your time will be spent. The approach you take here is up to you and how much time you had to prepare beforehand. You can go down your timeline and ask questions to your different interviewees as they come up, work down your list of prepared questions, or a combination of the two. Let the others in attendance know they’re free to ask clarifying or follow up questions, but that you may potentially redirect or rephrase those questions. If the idea of “interviewing” here feels strange, think about it as interviewing subjects for a story you’re writing, not interviewing a candidate for a job. 
+
+There are generally two types of questions you’ll find yourself asking: 
+Information seeking questions
+Context seeking questions
+
+An information seeking question may be “what is DNS?” or “how did a DNS issue affect this feature?”
+
+Where a context seeking question may be “what made you suspect it was DNS?” or “how did you know this DNS issue could impact the feature in this way?”
+
+Information seeking questions will help you find what happened and how the systems work. This is why there are no stupid questions! Questions that feel seemingly simple like “What is <this service/acronym/weird word you keep using>?” could open up a whole new level of understanding for someone who thought they understood what that is, or how it’s being used here. These questions help us rework our mental models3 and confront shared or individual assumptions about the system.
+
+Context seeking questions help you understand how this happened, and why the responders did what they did—essentially making visible the perspectives that shape how your people and systems work together. These are the types of questions that can elicit the knowledge that lives within the brains of your responders. Uncovering this context can change how teams work together, and how they work with the systems they support. 
+
+A helpful interview approach is to lead with an information seeking question to help set your interviewee at ease by having them explain a technical piece they know. Then ask context seeking questions as follow ups, to understand how they interact with and how they understand that technical piece. If the context seeking questions feel hard, that’s okay! Here’s a link to a list of questions4 you can keep on hand to deploy when you need help going deeper.
+
+Identify Themes & Discussion
+After the interactive narrative discovery, you may find some of the themes identified during analysis are no longer pertinent. That’s expected! New information provided by interviewees often shifts your understanding of the event, or your participants may feel strongly about other topics. If your pre-established themes no longer feel as relevant to the conversation, draw from the themes raised in the discussion. Some might have emerged naturally as you made your way through the timeline. Ask your attendees: 
+
+Was there anything that surprised you? 
+What do you think others outside of this review meeting should know more about?
+What did we find today that’s shared across other incidents? 
+
+Document what’s brought up here and discuss them as a group.
+
+Call for Questions
+Ask for any questions your attendees and interviewees may have held onto during the discussion, any topics not addressed, or unresolved concerns. A meeting based in knowledge elicitation has the potential to surface more questions than you may have time to answer. This isn’t a bad thing! If there are open questions, the conversations and collaboration to find the answers can be follow ups that you assign out to ensure they’re addressed, even if there’s not time to do so in this meeting.
+
+Next Steps
+Review the remediation and improvement work that has already been completed and discuss the next steps for any additional action items. It’s intentional that identifying and documenting next steps has not been a part of this post—there’s a lot to say here—it’s coming up next in our Incident Analysis 101 series.
+
+The next steps also include transitioning the calibration document into a final report, if your organization does one. Whether your note taker was transcribing in a different place or writing in your calibration doc during the meeting, clean up and consolidate it, adding in your observations and notes from the review as soon afterwards as you can. Make sure to invite attendees to read and edit the calibration document to provide their input. 
+
+Don’t forget to solicit feedback on the review meeting itself and your approach! Collecting feedback will help hone your process, clarify any lingering concerns, and find more ways to build psychological safety. 
+
+Once the investigation is over, you deserve a treat: eat a snack, drink a refreshing beverage, throw a one song dance party at your desk. You just completed a learning review! You created psychological safety, walked through the incident narrative while interviewing at the same time, surfaced themes, and established expectations for next steps. Some learning reviews will be harder to navigate than others, that’s normal. The more incidents you investigate and reviews you facilitate, the more your confidence and skills will grow.
+
+For more detailed information on these and other topics, you can always check out Jeli’s Howie: The Post Incident Guide for more information around Incident Analysis.  If you enjoy this content or want to suggest a future topic tweet us @jeli_io.
+References:
+1. Nancy Cooke, “Knowledge Elicitation,” (New Mexico State University), http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.457.339&rep=rep1&type=pdf.
+2. Amy Edmondson, “Psychological Safety and Learning Behavior in Work Teams,” (Johnson Graduate School of Management, Cornell University), 01/04/2009, http://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Group_Performance/Edmondson%20Psychological%20safety.pdf
+3. The Mental Models Global Laboratory, “What are mental models?” https://www.modeltheory.org/about/what-are-mental-models/ 
+4. Sidney Dekker, The Field Guide to Understanding ‘Human Error’. (Boca Raton: CRC Press, 2014). by way of a handout by John Allspaw, “The Infinite Hows”(blog) 11/13/2014, http://radar.oreilly.com/2014/11/the-infinite-hows.html 
+
