@@ -1,0 +1,90 @@
+Incident Analysis 101: Facilitating the Learning Review
+
+You’ve conducted interviews, put it all together, and written up your findings, now it’s time to gather everyone together and review the incident. In this post we’ll discuss who’s invited, how to create a learning environment, what the agenda looks like, and what comes next.
+Who’s Invited?
+
+Ideally, we need the responders involved in the incident to attend so they can share their perspective and recount their experiences. Schedule the meeting to include as many key people as possible, especially anyone you’ve interviewed. Remember that “responders” are not limited to oncall engineers. Make sure to include the other roles involved in the incident such as: customer support, incident management/command, security, and escalation teams/operations centers.
+
+Other participants and stakeholders can also be valuable inclusions depending on the context of the incident. Think: dependent service teams, engineers from other parts of the business, customer success/advocate roles, and impacted users. Diverse perspectives are crucial for making a learning review as comprehensive as possible. Inviting a broader range of roles improves understanding of how other parts of the company work and of larger organizational goals.  
+
+In a transparent organization, anyone who’s interested in learning from this incident should be able to attend! However, before opening the invite to everyone, assess the circumstances surrounding a particular review. Is the incident particularly contentious? Could things get potentially divisive or spicy if discussed in front of a broad audience? If the answer to any of these questions is yes, it’s okay to limit the invite list to responders and key stakeholders.
+Getting Prepped
+
+A Facilitator’s Mindset
+
+It’s important for the facilitator of a learning review to understand that their role is that of a reporter. You may have gathered information, interviewed participants, analyzed and written up those findings, but this does not make you the sole authority on the topics to be discussed. You are there to facilitate the sharing of knowledge and the expertise of those who participated in the incident. Time to take off your writing cap, put it next to your detective hat, and grab your facilitation visor.
+
+Reach out to those you interviewed, or have identified as subject matter experts, and ask if they’re comfortable being called on to explain pieces of the timeline and describe the event from their perspective. Everyone experienced the event from their specific point of view, and getting it directly from the source helps create a shared understanding of what occurred and gives us an opportunity to learn from each other. Share the calibration document in advance (we recommend at least 24 hours prior to the meeting) so they can get a feeling of how you’ve interpreted the events. Allow them to clarify, elaborate or correct as needed. Giving them advance notice that you’d like them to speak, and helping them understand what to expect, will help to ease any stage fright or defensiveness. These are normal reactions to public speaking but they can limit learning. Working collaboratively on the meeting content and the desired outcomes will reinforce the trust you’ve built together over the investigation. 
+
+Timing
+
+When scheduling the meeting, consider how much time it will take to get through the timeline and themes you’ve prepared. If the incident went on for several hours (or days!) a thirty minute review meeting won’t give you enough time. Conversely, the longer a meeting goes, even with important content, it is harder to secure broad attendance and retain attention spans. A good rule of thumb is to keep it between thirty minutes to two hours. You might indicate in the agenda that people can  attend for however long they are able.
+Agenda
+
+While all incidents are different, we recommend the following structure:
+
+Opening Remarks
+An overview of the analysis
+Interactive Narrative Summary
+Themes Discussion
+Call for Questions
+Steps already taken & Next Steps
+
+Begin  the meeting with expectations and acknowledgements. This creates the conditions for an honest and collaborative conversation to thrive.
+Opening Remarks: Set Your Practical Ground Rules
+
+As covered in the Howie Guide, if the meeting will be recorded, make that clear, explain why, and get the approval of the attendees. Establish which topics might be diverted into a parking lot of ideas to be addressed later, or in a separate meeting entirely, such as: rabbit holes into technical details, corrective implementation ideas, or action items. You might ask participants to write down questions they have and things they want addressed, and circle back at the end to see if they were answered.1
+Opening Remarks: Set Your Interactional Ground Rules
+
+Next you’ll want to establish an interpersonal agreement between all attendees. You’re about to start a journey through a potential minefield of events and topics; navigate them successfully by first acknowledging where they are and how to move past them.
+
+When you see data coupled with detailed analysis, it’s easy to assume choices made during an incident were informed by details that weren’t available until afterwards. Point out these counterfactuals2 if you see folks falling into that trap. And don’t forget to acknowledge the sneaky, innate predisposition present in every learning review: Hindsight Bias. Remind attendees that the incident responders did what they could with the information they had available to them at the time.
+
+This leads to the other elephant in the learning review: Blame. Often in the pursuit of a “blameless” review, we avoid saying individual’s names, or even skip over particularly sensitive parts of the event for fear of it coming across as blameful. But to truly learn from an incident, we need to understand all the circumstances around an action, including the thought process of each individual as they responded in the moment. We can’t afford to be “blameless” if it means avoiding the parts of an incident that are difficult to talk about. Those parts are often where we find the most to learn. 
+
+It is not the act of discussing these things that imparts blame, it’s the environment in which the discussion takes place. To paraphrase John Allspaw3 “Having a “blameless” Post-Mortem process means that engineers whose actions have contributed to an accident can give a detailed account without fear of punishment or retribution.” So the answer is neither to avoid using names, nor to place responsibility for a failure on an individual. It’s to be blame-aware4. Acknowledge that having responders discuss their experiences is how we learn from each other. Make it clear to all involved that everyone present is responsible for pointing out blame and moving past it. This enables an open discussion that allows us to share knowledge, improve how we work, and to solve the challenges we face. Together.
+
+To help sum up everything above, here’s a few sayings you can deploy to ease folks into the right headspace:
+
+“Don’t should on yourself, and don’t should on others.”5
+“Should” is a word that leads into several traps: guilt, blame/judgment, counterfactuals rooted in hindsight. Listen for it, and be prepared to step in and redirect them back to what actually took place.
+If you think ‘this might be a stupid question,’ ask it.
+This goes beyond “there are no stupid questions.” The questions we feel we should already know the answer to, or existing assumptions, are usually where there is the most to learn from. These seemingly simple, clarifying questions can lead to incredible insights and knowledge sharing.
+“Be Curious, Not Judgmental.”6
+This is it—this is how to create a blame-aware environment: learning and sharing without fear nor repercussions. The review should be an agreement between all parties to embark on a discussion, grounded in empathy and understanding, with the intention of learning how things happened, what unfolded, and what may still be unclear. 
+
+Once you lay this groundwork, you’re ready to move into the analysis.
+Analysis Overview
+
+Talk through the data you analyzed (which message channels, various docs, previous incident reports, Jira tickets, Zoom recordings, etc), and through the amount and scope of the interviews you conducted. Keep this short. Summarize where you started, where the analysis took you, and what your overall approach was while investigating this incident. This helps folks understand where you got the information that will be shared.
+
+Interactive Narrative Summary
+
+Now it’s time for your timeline to shine. Start by providing a short description of the event, cuing the folks you interviewed to describe what unfolded from their perspective. Use the timeline to prompt different responders to share their experiences, and have various subject matter experts provide background knowledge on how the relevant pieces of the system/technology work. Leave space for discussion—the facilitator should not be doing the majority of the talking here. 
+
+Keep an eye out for those rabbit holes! Rabbit holes can look like extended time spent discussing specific technical details about how the system worked or should have worked, or implementation details on how to fix or change something. If you’re not sure whether it’s a rabbit hole or an important discussion, ask! Let folks know how much time in the meeting remains, and ask if it’s valuable to continue this conversation now, or if it requires a dedicated time and place to dig into (we’ll talk about this more in our post on action items!).
+
+Themes Discussion
+
+Once you’ve gone through the timeline, provide an overview of the themes identified in the calibration document. Take time before the meeting to prioritize the most important themes you want to cover, as you will rarely have all the time you need. Ask for commentary from the responders, subject matter experts, and stakeholders present. It’s okay if all the themes in the calibration doc aren’t covered. Some will likely generate more discussion than others. How people respond and dig into your themes help to indicate which ones warrant a closer look!
+
+Call for Questions
+
+Now is the time to refer folks back to any questions they may have held onto during the discussion, any topics not addressed, or unresolved concerns. If the group doesn’t have any of their own, share some that came up for you during your investigation. If there are a lot of unresolved questions, acknowledge they might not all be answered in this learning review, and may warrant further discussion as an action item.
+
+Steps Already Taken & Next Steps
+
+Review the remediation and improvement work that has already been done so far and discuss the next steps for action items. It’s intentional that identifying and documenting next steps has not been a part of this post—there’s a lot to say here—so it will have it’s own post in our Incident Analysis 101 series.
+
+The next steps also include transitioning the calibration document into a final report, if your organization does one. Get people excited to read and discuss your write up, provide an ETA for delivery, and direct  folks to make it a living document through commenting and sharing (stay tuned for a post on sharing your findings from Vanessa!). Make sure to invite attendees who may not have already read the calibration document to provide their input. Don’t forget to solicit feedback! Encourage participants to give their thoughts on the process, meeting, and write up. Collecting feedback helps improve your process, clarify any lingering concerns, and makes the entire process more engaging.
+
+Once the meeting is over, take a deep breath, go for a walk, lay on the floor if you need to. Facilitating can be hard work! You established ground rules, overcame blame, walked through the incident narrative and themes, and established expectations for next steps. Some learning reviews will be harder to navigate than others, and that’s okay. Remember that the more incidents you investigate and meetings you facilitate, the more your muscle memory and skills will grow!
+
+For more detailed information on these and other topics, you can always check out Jeli’s Howie: The Post Incident Guide for more information around Incident Analysis.  If you enjoy this content or want to suggest a future topic tweet us @jeli_io.
+References:
+1. Dr. Laura Maguire, Nora Jones, Vanessa Huerta Granda, “Howie: The Post-Incident Guide” December 8. 2021, https://www.jeli.io/howie-the-post-incident-guide/ 
+2. Sidney Dekker, The Field Guide to Understanding ‘Human Error’. (Boca Raton: CRC Press, 2014).
+3. John Allspaw, “Blameless PostMortems and a Just Culture.” Etsy Code as Craft, May 22, 2012, https://www.etsy.com/codeascraft/blameless-postmortems.
+4. J. Paul Reed, “‘Blameless’ Postmortems Don’t Work. Be Blame-Aware but Don’t go Negative,” TechBeacon, July 29, 2021, https://techbeacon.com/app-dev-testing/blameless-postmortems-dont-work-heres-what-does.
+5. Clayton Barbeau, as referenced by John Tagg, “Shoulding Yourself, Shoulding Others” 1996, https://www2.palomar.edu/users/jtagg/should.htm.
+6. Walt Whitman, as referenced by Ted Lasso, though it seems as though Walt Whitman didn’t say it, https://www.snopes.com/fact-check/be-curious-not-judgmental-walt-whitman/
