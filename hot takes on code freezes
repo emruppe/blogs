@@ -1,0 +1,79 @@
+The lyrics may be controversial, but we all know the holiday classic “Baby, it’s cold outside,”
+
+I really can't stay
+Baby you’re still on-call
+I gotta go away
+Baby you’re still on-call
+This year has been
+You’ve stopped deployin
+So very nice
+Look at your code, it’s just like ice
+
+Okay, maybe those aren’t the lyrics, but they likely feel familiar to most engineering organizations this time of year. The holiday season is upon us, and in tech that means either half your team is on vacation, or the uptime of your product is vital for the next few weeks. Or both. Probably both. Companies all over the world have already started a holiday deploy freeze in an effort to prevent the introduction of bugs into their code. 
+
+You might think this entire blog post is coming too late, we’re already deep in the throes of holiday deploy freezes and vacations. Bah humbug. Consider this a visit from the ghosts of holiday deploy approaches—it is not too late to start a retrospective discussion around freezes past and present. There are always ways to improve, allow me to be your ghost of deploy freeze future. 
+
+As with everything in the modern world, there is a significant amount of nuance when it comes to discussing whether deploy freezes are either good or bad. Life would be a lot easier if we could definitely quantify things as good or bad. Unfortunately, in reality, nothing is that simple. I’ve spent a good deal of my career questioning deploy freezes as an on-call support engineer, planning for them as a project manager, and implementing/enforcing/cursing them as an on-call incident commander. I have a lot of mixed feelings about deploy freezes. I don’t disagree with the majority of hot takes on the internet. Deploy freezes can be done well, and deploy freezes can be done terribly. They can be just okay, they can cause a lot of extra work and end up a headache, or they can be nothing more than a series of hoops to jump through. 
+
+Let’s first address why most organizations implement a deploy freeze: it may be the assumption that they prevent incidents entirely, or it could be the desire to prevent a certain embarrassing incident during a peak time of use during the year. You know the kind of incident I’m talking about, the “a small deploy was made to address a bug, and it unwittingly caused a catastrophic incident we did not think could ever happen.”
+
+Hot Take: Putting a deploy freeze in place does not mean you will be incident free. 
+
+There are way too many gorgeous, mind-blowing ways for incidents to occur without a single change to code being deployed. Thanks to sudden shifts in traffic, forgotten cert expirations, vendor incidents, *cough* large-scale error logging vulnerabilities *cough*, frankly, it doesn’t matter if you’re not making changes to your code, incidents will still happen. You may even find that not deploying for a period of time exposes underlying issues you never knew were there. Honestly, that’s why the entire Learning from Incidents community exists, because a single change — one “root cause” — is never the full story. Incidents are a perfect storm of contributing factors coalescing together to lead to a disruption. 
+
+Preventing all changes to your code base will not leave you without incidents during the holiday season. Hard stop.
+
+A lot of people have written blogs about why you should not put a code freeze in place for the holidays. I am not here to argue with them. Frankly, I do not care if you implement a deploy freeze or not. The conversation here is how the processes we put in place affect us. Do they make our lives easier, or harder? 
+
+It’s an important question, one that depends on so many nuanced factors around your systems, people, company culture, and work environment. There is no single correct way to go about it. 
+
+I propose we reframe this discussion from “should we freeze deploys over the holidays?” to “what can we do to make the holidays smooth for both our customers and employees?”
+
+If your peak traffic season also happens to line up with the holiday season, this is an especially crucial question. You can either ignore the fact that your workers are also people who would like to enjoy the holidays by not working the entire time, or you can accept it and grant folks vacation time. Your company might even give everyone the same time off! Amazing! Love to see it! But you know who doesn’t fully get to take that time off? On-call engineers and frontline support.  Yeah pal, the lights are kept on by on-call engineers ack-ing alerts from their phone at the mall, and the company’s lowest paid employees sitting with their laptops at the dinner table taking tickets or chats, half present, while the holidays happen around them.
+
+Holiday on-call sucks. I’ve been there. Sitting in your car with your laptop in a mall parking lot is weird, and the folks who chat into support on Christmas are usually incredibly angry and make you feel it.
+
+Hot Take: Everyone who is on-call or working support during the holidays needs to be given mandatory additional time off and should receive holiday pay. 
+
+Working holiday coverage does not make you a hero, it makes you a worker logging hours on a national holiday. If you are on-call during the holidays—take other time off, being on-call is not being on vacation. Let me say that again, directly, in all caps: IF YOU ARE ON-CALL YOU ARE NOT ON VACATION. We are all tired. We’re about to finish two of the stupidest consecutive years in recent memory. Take a break. An actual, not-working, not-opening-laptop break. (Also to any company that can’t shut down support operations over the holidays, guess what? Your support staff are essential workers. They should be making more money.)
+
+Hot TIP: For those deploying during the holidays: remember that engineering does not exist in a vacuum. 
+
+Communicating what it is that you’re deploying, and what the potential customer facing outcomes are, in an internally visible place, is vital. Consider these successful deploys:
+A bug is fixed. 
+Now work arounds adopted by a few important accounts per their account manager, no longer work.
+A quick frontend update also shuffled the menu options to be in alphabetical order. 
+Now customers are bombarding support with questions about where “settings” went. 
+A request rate increase is put in place for an internal tool to pull data for a dashboard.
+Now triggers alerts for a DBA, nothing is broken, the increase in requests is just above the existing threshold for alerts.
+
+These probably won’t get declared as incidents, as production isn’t broken. And these are all reasonable, small fixes being pushed by engineers working through the holidays. But that account manager is on vacation and he’s trying to respond to customers from a ski lift, there’s only 3 people staffed for support right now and they’re drowning in chats, and that on-call DBA’s pager is blowing up while she’s managing three kids home from school and a house full of relatives. These folks are now troubleshooting on hard mode. Things that could have easily been escalated internally when half the company wasn’t on vacation, are now an arduous hunt to see if something changed, what it was, who can help, and what can be done about it. 
+
+Communicating about changes isn’t about the code being deployed, it’s about managing expectations for the entire ecosystem of workers whose jobs are impacted by these changes.
+
+The place where most deploy freezes end up as contributing factors to incidents are the weeks preceding and following the freeze. Before a deploy freeze you might see a mad rush to get things out while you still can. After a freeze, it can be like a traffic jam of deploys, ready to interact in unexpected ways. 
+
+And here, my hottest take yet: this is going to happen, deploy freeze or not. 
+
+“No! We don’t do deploy freezes for this very reason!” I know, I’m so sorry to tell you this, but it's still happening. The rush before vacations will still occur, same with cobweb clearing slowness then pace increasing when people get back. It’s just less apparent because instead of the hard edges of a deploy freeze, it’s the staggered dates of people leaving and returning from their holiday vacations. 
+
+Transitioning in and out of a week of company vacation or a deploy freeze or whatever time period it might be, is all about managing expectations. In deploy freeze language, I call heading into this time “the coming of the frost.” I’m not saying to call December a wash and expect not to make any progress in the last month of the year. But realistically, the pace of work will be altered, things slow as folks begin vacations, but there’s also a rush to get things across the line before the end of the year. This time frame is the most fraught when there are major deadlines surrounding it, particularly right afterwards at the beginning of January. 
+
+Hot Tip: Your yearly/quarterly planning needs to adapt to the reality of December. 
+
+It’s imperative to make sure the work being planned is reasonable work to accomplish in that time frame, and then maybe reduce it a little more. 
+
+The key to coming back in January is nothing different or new from what’s needed during December, it’s just adding the renewed zeal and commitment we all muster at the beginning of the year: communicate what you’re deploying, before you deploy it, in an internally public place. Talk about what it’s intended to do and the things it could touch. Coordinate whether you roll through those first two weeks of January as usual, or if you want to move more slowly and ease different teams back into deploying on different schedules. And when I say “internally public place” I mean in a space where people outside of just engineering and planning are involved and included. *taps the sign* Communicating about changes isn’t about the code being deployed, it’s about managing expectations for the entire ecosystem of workers whose jobs are impacted by these changes.
+
+Hot Take for if a full deploy freeze is your jam: A deploy freeze means that folks are not actively trying to make progress on a dev project that needs to be deployed. Deploy freezes need to equate to either time off, or time spent on things that do not need to be deployed when complete. 
+
+This includes specs for upcoming planning, coordination, developing tools to support processes, and other tasks beyond customer facing changes. That’s it. That’s the secret sauce. Deploy freezes shouldn’t mean idle engineers. It should mean engineers doing all the other work the job requires beyond just writing code. You won’t trip over too many deploys after a thaw if the majority of the freeze was not spent working on code.
+
+The above advice is relevant to those not implementing deploy freezes, as well. Maybe your weeks before and after vacation are also dedicated to focusing on the other work outside of deploying. It doesn’t have to mean zero deploys, but it can help with easing things back to full pace as people return to work from vacation.
+
+Once you’re back in the swing of things, it’s time to review your holiday deploy approach. Initiate a conversation around what worked and what didn’t work. Talk to the folks who were on-call, those who got pulled online from their vacation, the process organizers, and even customers about their experiences. Discuss what changes can be introduced to make the entire process work better for those involved.
+
+I feel I must reiterate: deploy freeze or no deploy freeze, incidents will still happen over the holidays. Send out a cheat sheet, a one stop shop to find on-call schedules, incident processes, and back up plans ahead of the holidays to help folks feel prepared. And remember, incidents are opportunities. They create an environment in which teams improvise, react, learn and work together to understand and solve problems in real time. Take care of each other, give yourself some grace and prepare to learn some incredible things together. 
+
+With that, I leave you to your own code carols. 
+
