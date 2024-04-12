@@ -1,0 +1,50 @@
+Incident Analysis 101: Handling Action Items
+
+Now that you’ve had your post-incident review meeting, there are probably some things that came up that you want to follow up on. In this post we will walk you through how to deal with the action items and follow-ups that arise during and after your post-incident review meeting. 
+
+As you facilitate the learning review, ideas for changes or plans will naturally come up. In incident reviews people want to get to solutions, often before the problem is fully understood. Resist this urge! Instead of taking the time in the learning review to flesh out what those plans should look like, ideally action items should be addressed separately from the main learning review meeting. As the Etsy Debriefing Facilitation Guide1 also suggests, we recommend a separate meeting entirely if possible. This helps keep the focus of the learning review on learning. If this isn’t possible, identify the items that need action at the end of the meeting, and assign folks to have further discussions with the necessary stakeholders at a later dedicated time and space. But first let’s start with what the right kinds of action items are.
+What are the right action items?
+Take this incident scenario: a change was introduced to the Gandalf service that allows customers to take a new action. This increased traffic to the Atlas service, which revealed a bug that has been in the code for years. Response was protracted because all signs pointed to Atlas being impacted, that team added capacity, but didn’t have full context on the changes made to Gandalf. Getting the right people in the room took a while and now there’s some contention between the teams.
+ 
+Where do the “right” action items lie? Make sure the Gandalf team always tells the Atlas team before they make a change? Fix this bug in the code? Add something to catch this bug in a test suite? Add alerts to indicate when customers perform this specific action? Auto-scale capacity to this service? Prevent customers from taking that action? It could be all of these, it could be none of them. The only “right” answer here is: it depends.
+
+When creating action items, it is most important to understand what the intended outcome is. Is it to prevent aspects of this very specific failure scenario from happening again? It could be, for example, if there are specific risks that need to be mitigated. Is it to gain insight into how the people and systems work together when something goes wrong? 
+
+When making suggestions for changes, it's best to focus on the system as a whole rather than on just a part (like one individual). If you find that you’re reaching for command and control type solutions, this can be a sign that you’re off track in seeking systemic change. This is especially true if the item is something like a policy change after a mistake was made to “not make X mistake again.” An action item like this indicates there is still more to be learned about the circumstances around that mistake and the options available to individuals in that situation. 
+
+Who should make action items?  Who should “own” them?
+Action items should be created and owned by those responsible for implementing the plans and doing the work. Often these items are more complex than a single ticket and thought needs to go into planning projects, or writing up proposals/blueprints for changes. Creating action items for others to execute is a way to ensure confusion, debate, and resistance. If something needs to be acted on, the folks who work in these areas daily are the best people to figure out what needs to be done, whether it should be done, and how to make it happen.
+
+Action items don’t have to be something that goes in your ticketing system or engineering work at all. Action items might include changing, updating, abolishing, or creating new processes based on feedback from the review. They might look like learning more about a particular technology, investigating some part of the system, or even teaching others—for example, holding an architecture overview to reorient the understanding of how things work together. 
+
+It may be tempting to assign due dates for action item completion. This is reasonable if the timing is determined per item based on current workload and time it will take to develop the solution. Blanket SLAs on action item completion only accomplishes one thing: for action items to be sized specifically to be completed within that time frame. Unless your project and product managers plan for the work coming out of an incident to immediately take priority over all existing deadlines, requiring incident action items to be completed within a specific time frame is forcing engineers to make tradeoffs against other critical priorities.
+Changing the way we think about action items
+As Gary Klein says, performance improvement happens when we reduce errors and increase insights2. Within the sphere of incidents in tech, the focus tends to fall much more heavily on error reduction than insight generation. This is understandable as errors are already visible and therefore more readily addressed, but this doesn’t serve us as well as we think.
+
+After an incident there is often the sentiment that the goal is to “prevent this incident from ever happening again.” The truth is, no matter what we do, we probably won’t ever have this exact incident again. We can prevent very specific incident scenarios from occurring again through a series of technical remediations. But we can’t prevent new incidents that may have different contributing factors with the same or similar impact. This is the reality of incidents in increasingly complex systems: different triggers, contributing factors, and risks coalesce into a new and different issue that impacts how that service, system, or feature functions. Heck, the technical remediations of today’s incidents might be a contributing factor in tomorrow’s incident. 
+
+This isn’t to say that technical remediations are bad or unhelpful. They are often immediate solutions required to return impact to expected operations, or obvious forehead slappers like “tool doesn’t confirm before deletion,” that can be fixed. However, if the goal is to build a more resilient system, technical remediations are not enough. In the first post in this series, Alex Elman, a Site Reliability Engineer at Indeed who leads their Resilience Engineering team puts it this way: “A ‘prevent and fix’ cycle is a backward facing process that aims to avoid surprise and prepares only for previously encountered failure modes. This method of following up on incidents leads to narrowly targeted improvements and lessons that don’t apply to future encounters with surprise.”4 
+Sociotechnical system insights = true resilience
+When an incident has a similar impact to a prior one, it’s likely not the previous technical remediations that will help resolve the new problem—it’s the insights gained about the sociotechnical systems from that incident that will help us better respond to this one. 
+
+We’ve seen Learning Reviews generate deep insights into sociotechnical systems through discussions around:
+How we access, monitor, and alert on the system data available
+How we decipher that data and how we know what it’s indicating
+How we know which people to assemble to help with what we see
+How we talk to each other and our customers about what’s going on
+How we determine what paths to take toward remediation
+How we know whether the remediation has been effective
+
+Being able to gain insight into these (and other) aspects of service delivery is how we discover the sources of resilience in the system. 
+
+Our systems and people are constantly growing, evolving, and changing. The insights we gain from each incident are how we continue to learn to better understand our systems, and each other. When we prioritize learning as our response when things go wrong, we focus on understanding what we didn’t know previously or as the incident was unfolding, instead of immediately looking for things to fix. Then from our new, more knowledgeable perspective we can determine if actions are required, and source from those closest to the problem what solutions could look like. 
+
+For more detailed information on these and other topics, you can always check out Jeli’s Howie: The Post Incident Guide for more information around Incident Analysis.  If you enjoy this content or want to suggest a future topic tweet us @jeli_io.
+References:
+1. John Allspaw, Morgan Evans, Daniel Schauenberg. “Debriefing Facilitation Guide,” Etsy, 2016.
+2. Klein, Gary. Seeing What Others Don't: The Remarkable Ways We Gain Insights. United States, PublicAffairs, 2013.
+3. Dr. Laura Maguire, “What is incident analysis and why should we do it?” Jeli, 2021. https://www.jeli.io/blog/what-is-incident-analysis-and-why-should-we-do-it/ 
+4. Alex Elman, “Are We Getting Better Yet? Progress Toward Safer Operations” SRECon 2020 Americas, 2020. https://www.usenix.org/conference/srecon20americas/presentation/elman 
+
+
+(written with Thai Wood)
